@@ -1,0 +1,9 @@
+import axios from "../lib/axios";
+
+export const getTransactions = async () => {
+  return axios.get("/transactions");
+};
+
+export const addTransaction = async (data: any) => {
+  return axios.post("/transactions", data);
+};
