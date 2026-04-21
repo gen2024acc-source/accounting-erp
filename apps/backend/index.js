@@ -5,7 +5,7 @@ const { Pool } = require("pg");
 const authRoutes = require("./src/routes/auth.routes");
 const productRoutes = require("./src/routes/product.routes");
 const Stripe = require("stripe");
-const stripe = new Stripe("sk_test_51Ng0quEO4fkNLtiocoBYURklIzRBKNW301WqyUFGdPeSTtksRQ1fMRuNk9hMqEXSQl4xZfS5XaDiNQkn1mUyHg9m00BLfoTZWr");
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 const app =express();
 app.use(cors());
