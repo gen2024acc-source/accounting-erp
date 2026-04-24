@@ -62,8 +62,10 @@ app.post("/transactions", async (req, res) => {
   res.json(result.rows[0]);
 });
 
-app.listen(3001, () => {
-  console.log("Backend running on http://localhost:3001");
+const PORT = process.env.PORT || 3001;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
 
 app.post("/create-checkout-session", async (req, res) => {
