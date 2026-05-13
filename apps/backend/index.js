@@ -15,11 +15,10 @@ app.use("/products", productRoutes);
 
 // PostgreSQL con exprnection
 const pool = new Pool({
-  user: "postgres",
-  host: "localhost",
-  database: "accounting_db",
-  password: "1234",
-  port: 5432,
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
 // GET transactions
