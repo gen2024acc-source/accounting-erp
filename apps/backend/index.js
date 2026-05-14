@@ -12,6 +12,9 @@ app.use(cors());
 app.use(express.json());
 app.use("/auth", authRoutes);
 app.use("/products", productRoutes);
+app.get("/", (req, res) => {
+  res.send("Backend server is running");
+});
 
 // PostgreSQL con exprnection
 const pool = new Pool({
